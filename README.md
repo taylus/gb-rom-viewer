@@ -13,11 +13,11 @@ The graphics may be compressed, so they aren't stored in the ROM the same way th
 Kinda...! Try one and see. Some graphics load, but there must be something more to Game Boy Color tile data. I haven't gotten there yet.
 
 ## Sample images
-![Pokemon Red/Blue/Yellow](screenshots\pokemon_sample.png "Pokemon Red/Blue/Yellow")
+![Pokemon Red/Blue/Yellow](screenshots/pokemon_sample.png "Pokemon Red/Blue/Yellow")
 ===
-![Zelda: Link's Awakening](screenshots\links_awakening_sample.png "Zelda: Link's Awakening")
+![Zelda: Link's Awakening](screenshots/links_awakening_sample.png "Zelda: Link's Awakening")
 ===
-![Final Fantasy Legend II](screenshots\ff_legend_2_sample.png "Final Fantasy Legend II")
+![Final Fantasy Legend II](screenshots/ff_legend_2_sample.png "Final Fantasy Legend II")
 
 ## References + thanks to
 * https://www.huderlem.com/demos/gameboy2bpp.html

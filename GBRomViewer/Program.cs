@@ -45,11 +45,8 @@ namespace GBRomViewer
 
         private static int GetOutputImageHeightInTiles(int outputImageWidthInTiles, byte[] rom)
         {
-            //interpreting bytes as 2bpp pixel data:
-            //each consecutive pair of bytes is one 8 pixel row of data in a tile
-            //16 bytes make up one tile, so given the desired width of the output image (in tiles),
-            //the height of output image in pixels = # of bytes in ROM / 16 bytes per tile / desired width in tiles
-            return rom.Length / Tile.BytesPerTile / outputImageWidthInTiles;
+            int tilesInRom = rom.Length / Tile.BytesPerTile;
+            return tilesInRom / outputImageWidthInTiles;
         }
     }
 }

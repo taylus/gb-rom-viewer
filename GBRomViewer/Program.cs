@@ -2,7 +2,6 @@
 using System.IO;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
 
 namespace GBRomViewer
 {
@@ -31,16 +30,10 @@ namespace GBRomViewer
                     int tileY = i / outputImageWidthInTiles;
                     tiles[i].DrawOnto(image, tileX, tileY, palette);
                 }
-                Resize(image, scale: 4);
                 image.SaveAsPng(stream);
             }
 
             Process.Start(new ProcessStartInfo() { FileName = outputFileName, UseShellExecute = true });
-        }
-
-        private static void Resize(Image<Rgba32> image, int scale)
-        {
-            image.Mutate(img => img.Resize(image.Width * scale, image.Height * scale, KnownResamplers.NearestNeighbor));
         }
 
         private static int GetOutputImageHeightInTiles(int outputImageWidthInTiles, byte[] rom)

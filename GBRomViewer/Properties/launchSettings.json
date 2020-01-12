@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GBRomViewer": {
+      "commandName": "Project",
+      "commandLineArgs": "-o output.png -tw 64 \"C:\\roms\\gb\\Bubble Bobble (USA, Europe).gb\""
+    }
+  }
+}

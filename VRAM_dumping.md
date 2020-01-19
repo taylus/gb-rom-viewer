@@ -1,5 +1,5 @@
-# Collecting and viewing VRAM dump using the BGB emulator
-## Save a memory dump file
+# Dumping and viewing VRAM
+## Save a memory dump file using the BGB emulator
 Launch [BGB](http://bgb.bircd.org/) and load a ROM, then go to File -> save memory dump...
 
 ![Saving a memory dump in BGB](screenshots/bgb_save_memory_dump.png "Saving a memory dump in BGB")

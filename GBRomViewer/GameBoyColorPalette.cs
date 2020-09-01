@@ -8,7 +8,7 @@ namespace GBRomViewer
     public class GameBoyColorPalette
     {
         public IEnumerable<string> HexColors { get; set; }
-        public IEnumerable<Rgba32> ToRgba32() => HexColors.Select(c => Rgba32.FromHex(c));
+        public IEnumerable<Rgba32> ToRgba32() => HexColors.Select(c => Rgba32.ParseHex(c));
 
         private GameBoyColorPalette(params string[] hexColors)
         {

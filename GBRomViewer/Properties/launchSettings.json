@@ -2,7 +2,7 @@
   "profiles": {
     "GBRomViewer": {
       "commandName": "Project",
-      "commandLineArgs": "-o output.png -tw 64 \"C:\\roms\\gb\\Bubble Bobble (USA, Europe).gb\""
+      "commandLineArgs": "-o output.png -tw 16 -pal mgb \"C:\\roms\\gb\\Pokemon Blue.gb\""
     }
   }
 }

@@ -9,6 +9,7 @@ namespace GBRomViewer
     public class Program
     {
         private static int outputImageWidthInTiles = 16;
+        private static GameBoyColorPalette palette = GameBoyColorPalette.Dmg;
 
         public static void Main(string[] args)
         {
@@ -18,8 +19,7 @@ namespace GBRomViewer
             var rom = File.ReadAllBytes(inFile);
             var tiles = Tiles.LoadFrom(rom);
 
-            //plot the tiles onto an output image using a given color palette
-            var palette = GameBoyColorPalette.Dmg;
+            //plot the tiles onto an output image using the given color palette
             int outputImageWidthInPixels = outputImageWidthInTiles * Tile.Width;
             int outputImageHeightInPixels = GetOutputImageHeightInTiles(outputImageWidthInTiles, rom) * Tile.Height;
             using (var image = new Image<Rgba32>(outputImageWidthInPixels, outputImageHeightInPixels))
@@ -60,10 +60,16 @@ namespace GBRomViewer
                 outFile = args[1];
                 inFile = args[4];
             }
+            else if (args.Length == 7 && args[0] == "-o" && args[2] == "-tw" && int.TryParse(args[3], out outputImageWidthInTiles) && args[4] == "-pal")
+            {
+                outFile = args[1];
+                inFile = args[6];
+                palette = string.Equals(args[5], "dmg", StringComparison.OrdinalIgnoreCase) ? GameBoyColorPalette.Dmg : GameBoyColorPalette.Pocket;
+            }
             else
             {
                 outFile = inFile = null;
-                Console.WriteLine("Usage: gbromviewer [-o output.png] [-tw 16] rom.gb");
+                Console.WriteLine("Usage: gbromviewer [-o output.png] [-tw 16] [-pal dmg] rom.gb");
             }
         }
     }
